@@ -7,6 +7,12 @@ button.addEventListener("click",()=>{
     const nomValue=nom.value;
     const emailValue=email.value;
     const passwordValue=password.value;
+    const user={
+        nom:nomValue,
+        email:emailValue,
+        password:passwordValue
+    };
+    localStorage.setItem("user",JSON.stringify(user));
     if(!nomValue && !emailValue && !passwordValue){
 
         alert("Please fill in all fields.");
@@ -23,9 +29,7 @@ button.addEventListener("click",()=>{
     else if(!emailValue.includes("@")){
         alert("Please enter a valid email address.");
     }
-    else if(!passwordValue.match(/[A-Z]/) && !passwordValue.match(/[a-z]/) && !passwordValue.match(/[0-9]/)){
-        alert("Password must contain at least one uppercase letter, one lowercase letter, and one number.");
-    }
+    
     else {
         alert("Name:"+nomValue+"\nEmail:"+emailValue+"\nPassword:"+passwordValue);
     }});
