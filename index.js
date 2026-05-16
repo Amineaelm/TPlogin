@@ -17,6 +17,15 @@ button.addEventListener("click",()=>{
     }else if(!passwordValue){
         alert("Please enter your password.");
     }
+    else if(passwordValue.length<6){
+        alert("Password must be at least 6 characters long.");
+    }
+    else if(!emailValue.includes("@")){
+        alert("Please enter a valid email address.");
+    }
+    else if(!passwordValue.match(/[A-Z]/) && !passwordValue.match(/[a-z]/) && !passwordValue.match(/[0-9]/)){
+        alert("Password must contain at least one uppercase letter, one lowercase letter, and one number.");
+    }
     else {
         alert("Name:"+nomValue+"\nEmail:"+emailValue+"\nPassword:"+passwordValue);
     }});
